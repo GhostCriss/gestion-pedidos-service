@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 )
 public interface AuthClient {
 
-    @GetMapping("/api/usuarios/{id}")
+    @GetMapping("/auth/{id}")
     UsuarioDTO getUsuarioById(@PathVariable("id") Long id);
 }
