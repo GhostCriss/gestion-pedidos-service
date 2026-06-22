@@ -1,0 +1,37 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: MS-PEDIDOS
+  datasource:
+    url: jdbc:mysql://mysql_pedidos:3306/db_amazorg_pedidos?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: desarrollador
+    password: password_seguro_123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 3000
+            readTimeout: 5000
+
+auth:
+  service:
+    url: http://13.216.24.99:8082
+
+promociones:
+  service:
+    url: http://52.21.118.110:8085
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
